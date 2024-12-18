@@ -50,10 +50,10 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-    xkbOptions = "ctrl:nocaps";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+    options = "ctrl:nocaps";
   };
 
   # Enable CUPS to print documents.

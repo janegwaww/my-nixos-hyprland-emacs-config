@@ -6,3 +6,15 @@
   nix run home-manager -- init --switch .
 #+end_src
 
+** remap caps to ctrl
+
+after modified configuration.nix with:
+#+begin_src nix
+  services.xserver.xkb.options = "ctrl:nocaps";
+#+end_src
+then run commands:
+#+begin_src shell
+  gsettings reset org.gnome.desktop.input-sources xkb-options
+  gsettings reset org.gnome.desktop.input-sources sources
+#+end_src
+final reboot.

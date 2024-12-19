@@ -23,6 +23,7 @@
         modules = [
 	  ./home-manager/home.nix
 	  ./modules/git.nix
+	  ./modules/emacs.nix
 	];
 
         # Optionally use extraSpecialArgs

@@ -1,6 +1,16 @@
-* my-nixos-hyprland-emacs-config
+* nixos-hyprland-emacs-config
 
-** init home-manager
+** Getting Started
+
+Install nix and run these commands:
+
+#+begin_src shell
+  nix run nixpkgs#gh -- auth login
+  nix run nixpkgs#gh -- repo clone user.name/repository ~/repository
+  nix run home-manager -- switch --flake ~/repository#username
+#+end_src
+
+How to init home-manager
 
 #+begin_src shell
   nix run home-manager -- init --switch .
@@ -12,9 +22,11 @@ after modified configuration.nix with:
 #+begin_src nix
   services.xserver.xkb.options = "ctrl:nocaps";
 #+end_src
+
 then run commands:
 #+begin_src shell
   gsettings reset org.gnome.desktop.input-sources xkb-options
   gsettings reset org.gnome.desktop.input-sources sources
 #+end_src
+
 final reboot.
